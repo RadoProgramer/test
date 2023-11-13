@@ -39,13 +39,13 @@
         <section class="section section-mobile">
             <div class="container">
         <h1 class="index-heading">Effective Solutions for Your Business</h1>
-        <button class="button button-studio" data-modal-open type="button">Order Service</button>
+        <button class="order-button" data-modal-open type="button">Order Service</button>
     </div>
         </section>
         <section class="section">
             <div class="container">
             <h2 class="visually-hidden">some content</h2>
-            <ul class="list list-studio">
+            <ul class="list section-index">
                 <li class="li-index"><div class="feature-icon"><svg width="64" height="64"><use href="./images/icons.svg#icon-antenna"></use></svg></div><h3 class="index-heading-two">Strategy</h3>
                     <p class="index-category">Our goal is to identify the business
                         problem to walk away with the perfect and creative solution.</p>
@@ -74,9 +74,9 @@
             </ul>
         </div>
         </section>
-        <section class="section">
+        <section class="section third-section">
             <div class="container">
-            <h2 class="inex-heading-thre">What are we doing</h2>
+            <h2 class="index-section-header">What are we doing</h2>
             <ul class="list list-studio">
                 <li class="li-index-two"><img src="./images/img1.jpg" alt="white monitor" width="360" height="300"  /></li>
                 <li class="li-index-two"><img src="./images/img2.jpg" alt="mobile application" width="360" height="300"  /></li>
@@ -85,12 +85,12 @@
             </ul>
         </div>
         </section>
-        <section class="section">
+        <section class="section team-section">
             <div class="container">
-            <h2 class="inex-heading-four">Our Team</h2>
-            <ul class="list list-studio">
-                <li class="list-index-bacground li-index-thre"><img src="./images/img4.jpg" alt="man in a blue shirt with short stubble" width="264" height="260" />
-                    <div class="team-list"><h3 class="foto">Mark Guerrero</h3><p class="index-category foto-list">Product Designer</p><ul class=" list team-social-icons">
+            <h2 class="index-section-header">Our Team</h2>
+            <ul class="list team-list-studio">
+                <li class="li-index-thre"><img src="./images/img4.jpg" alt="man in a blue shirt with short stubble" width="264" height="260" />
+                    <div class="team-description"><h3 class="foto-team">Mark Guerrero</h3><p class="index-category foto-list">Product Designer</p><ul class=" list team-social-icons">
                         <li class="social-icon">
                             <a class="social-link" href="#0">
                                 <svg class="icon"  width="16" height="16">
@@ -121,8 +121,8 @@
                         </li>
                     </ul></div>
                 </li>
-                <li class="list-index-bacground li-index-thre"><img src="./images/img5.jpg" alt="smiling man in blue shirt" width="264" height="260" />
-                    <div class="team-list"><h3 class="foto">Tom Ford</h3><p class="index-category foto-list">Frontend Developer</p><ul class=" list team-social-icons">
+                <li class="li-index-thre"><img src="./images/img5.jpg" alt="smiling man in blue shirt" width="264" height="260" />
+                    <div class="team-description"><h3 class="foto-team">Tom Ford</h3><p class="index-category foto-list">Frontend Developer</p><ul class=" list team-social-icons">
                         <li class="social-icon">
                             <a class="social-link" href="#0">
                                 <svg class="icon" width="16" height="16">
@@ -153,8 +153,8 @@
                         </li>
                     </ul></div>
                 </li>
-                <li class="list-index-bacground li-index-thre"><img src="./images/img6.jpg" alt="young woman with long hair and pink sweater" width="264" height="260" />
-                    <div class="team-list"><h3 class="foto">Camila Garcia</h3><p class="index-category foto-list">Marketing</p><ul class=" list team-social-icons">
+                <li class="li-index-thre"><img src="./images/img6.jpg" alt="young woman with long hair and pink sweater" width="264" height="260" />
+                    <div class="team-description"><h3 class="foto-team">Camila Garcia</h3><p class="index-category foto-list">Marketing</p><ul class=" list team-social-icons">
                         <li class="social-icon">
                             <a class="social-link" href="#0">
                                 <svg class="icon" width="16" height="16">
@@ -185,8 +185,8 @@
                         </li>
                     </ul></div>
                 </li>
-                <li class="list-index-bacground li-index-thre"><img src="./images/img7.jpg" alt="young man with short stubble in a gray T-shirt" width="264" height="260" />
-                    <div class="team-list"><h3 class="foto">Daniel Wilson</h3><p class="index-category foto-list">UI Designer</p><ul class=" list team-social-icons">
+                <li class="li-index-thre"><img src="./images/img7.jpg" alt="young man with short stubble in a gray T-shirt" width="264" height="260" />
+                    <div class="team-description"><h3 class="foto-team">Daniel Wilson</h3><p class="index-category foto-list">UI Designer</p><ul class=" list team-social-icons">
                         <li class="social-icon">
                             <a class="social-link" href="#0">
                                 <svg class="icon" width="16" height="16">
@@ -222,7 +222,7 @@
         </section>
         <section class="section">
             <div class="container">
-                <h2 class="customers-header">Customers</h2>
+                <h2 class="index-section-header">Customers</h2>
                 <ul class="list customers-sprites">
                     <li class="customer-icon">
                         <a class="customer-link" href="#0">
@@ -329,7 +329,7 @@
     </footer>
     <div class="backdrop is-hidden" data-modal>
         <div class="modal">
-            <button type="button" class="close-btn" data-modal-close>
+            <button type="button" class="close-button" data-modal-close>
                 <svg class="modal-svg" width="8" height="8">
                     <use href="./images/icons.svg#icon-close-black"></use>
                 </svg>
@@ -340,7 +340,7 @@
                     <label class="modal-label" for="user-name">Name</label>
                     <div class="contact-input">
                         <input class="input-box" id="user-name" type="text" name="user-name" required>
-                        <svg class="svg-icon" width="18" height="24">
+                        <svg class="modal-icon" width="18" height="24">
                             <use href="./images/icons.svg#icon-person-black"></use>
                         </svg>
                     </div>
@@ -349,7 +349,7 @@
                     <label class="modal-label" for="user-phone">Phone</label>
                     <div class="contact-input">
                         <input class="input-box" id="user-phone" type="tel" name="user-phone" required>
-                        <svg class="svg-icon" width="18" height="24">
+                        <svg class="modal-icon" width="18" height="24">
                             <use href="./images/icons.svg#icon-phone-black"></use>
                         </svg>
                     </div>
@@ -358,34 +358,34 @@
                     <label class="modal-label" for="user-email">Email</label>
                     <div class="contact-input">
                         <input class="input-box" id="user-email" type="email" name="user-email" required>
-                        <svg class="svg-icon" width="18" height="24">
+                        <svg class="modal-icon" width="18" height="24">
                             <use href="./images/icons.svg#icon-email-black"></use>
                         </svg>
                     </div>
                 </div>
-                <div class="modal-contact-element">
+                <div class="comment-box">
                     <label class="modal-label" for="user-comment">Comment</label>
-                   <textarea class="modal-comment clear-style" id="user-comment" name="user-comment" rows="15"
+                   <textarea class="modal-comments" id="user-comment" name="user-comment"
                    placeholder="Text input"></textarea>
                 </div>
-                <div class="contact-element">
-                    <input class="contact-privacy visually-hidden" type="checkbox" id="user-privacy" name="user-privacy" value="true" required>
-                    <label class="modal-label" for="user-privacy">
-                        <span class="check-box">
+                <div class="privacy-wrapper">
+                    <input class="visually-hidden privacy-input" type="checkbox" id="user-privacy" name="user-privacy" value="true" required>
+                    <label class="privacy-label" for="user-privacy">
+                        <span class="checkbox-span">
                             <svg class="svg-icon-checked" width="10" height="8">
                                 <use href="./images/icons.svg#icon-checked"></use>
                             </svg>
                         </span>"I accept the terms and conditions of the"
                         <a class="link-privacy" href>Privacy Policy</a>
                     </label>
-                </div><button class="button-send" type="submit">Send</button>
+                </div><button class="modal-button" type="submit">Send</button>
             </form>
         </div>
     </div>
     <div class="menu-container js-menu-container" id="mobile-menu">
         <button class="menu-toggle js-close-menu">
             <svg class="mobile-menu-close" width="8" height="8">
-                <use href="./images/icons.svg#icon-close-button"></use>
+                <use href="./images/icons.svg#icon-close-black"></use>
             </svg>
         </button>
         <ul class="list mobile-page-nav">

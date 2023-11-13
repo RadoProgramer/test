@@ -392,4 +392,335 @@ button {
     margin: 0 auto;
     padding: 112px 0;
 }
+  
+  @media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+      .section-mobile {
+          background-image: linear-gradient(to bottom,
+                  rgba(46, 47, 66, 0.7),
+                  rgba(46, 47, 66, 0.7)),
+              url(../images/people-office@2x.jpg);
+      }
+  }
+  .index-heading {
+      color: var(--white-background-color);
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.11;
+      letter-spacing: 0.72px;
+      max-width: 350px;
+      text-align: center;
+      margin: 0 auto;
+      margin-bottom: 72px;
+  }
+   .order-button {
+       font-family: "Roboto", sans-serif;
+       background-color: var(--primary-brand-color);
+       color: var(--white-background-color);
+       font-size: 16px;
+       font-weight: 500;
+       line-height: 1.5;
+       letter-spacing: 0.04em;
+       padding: 16px 32px;
+       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+       display: block;
+       min-width: 169px;
+       margin: 0 auto;
+       transition-property: background-color;
+       transition-duration: 250ms;
+       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+   }
+   .order-button:hover,
+   .order-button:focus {
+       background-color: var(--pressed-state-color);
+   }
+   .backdrop {
+       position: fixed;
+       inset: 0 0 auto;
+       min-height: 100vh;
+       background-color: var(--dark-color);
+       opacity: 1;
+       pointer-events: all;
+       transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+           visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   }
+   .backdrop.is-hidden {
+       opacity: 0;
+       pointer-events: none;
+       visibility: hidden;
+   }
+
+   .modal {
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%) scale(1);
+       background-color: var(--modal-background-color);
+       width: 408px;
+       min-height: 584px;
+       border-radius: 4px;
+       box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+           0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+       transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+       padding: 72px 24px 24px 24px;
+   }
+   .close-button {
+       position: absolute;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       top: 24px;
+       right: 24px;
+       padding: 0;
+       background-color: var(--accent-color);
+       border-radius: 50%;
+       width: 24px;
+       height: 24px;
+       border: 1px solid rgba(0, 0, 0, 0.1);
+       color: var(--dark-color);
+       transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+           border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   }
+
+   .close-button-icon {
+       fill: currentColor;
+       transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   }
+
+   .close-button:hover,
+   .close-button:focus {
+       background-color: var(--pressed-state-color);
+       color: var(--white-background-color);
+       border: none;
+   }
+   .modal-title {
+       color: var(--dark-color);
+       font-size: 16px;
+       font-weight: 500;
+       line-height: 1.5;
+       letter-spacing: 0.02em;
+       text-align: center;
+       margin-bottom: 16px;
+   }
+   .modal-contact {
+       display: flex;
+       flex-direction: column;
+   }
+   .modal-contact-element {
+       margin-bottom: 8px;
+   }
+    .modal-label {
+    color: var(--light-slate);
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    display: block;
+    margin-bottom: 4px;
+}
+.contact-input {
+    position: relative;
+}
+.input-box {
+    outline: transparent;
+    border-radius: 4px;
+    border: 1px solid var(--modal-overlay-color);
+    background-color: transparent;
+    width: 100%;
+    height: 40px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding-left: 38px;
+}
+.input-box:focus {
+    border-color: var(--primary-brand-color);
+}
+.input-box:hover {
+    border-color: var(--primary-brand-color);
+}
+
+.input-box:focus+.field-icon {
+    fill: var(--primary-brand-color);
+}
+.modal-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translatey(-50%);
+    fill: var(--dark-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-icon:focus {
+    fill: var(--primary-brand-color);
+}
+.modal-icon:hover {
+    fill: var(--primary-brand-color);
+    }
+.comment-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    color: var(--light-slate);
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.48px;
+}
+.modal-comments {
+    width: 100%;
+    height: 120px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: var(--modal-overlay-color);
+    border: 1px solid var(--modal-overlay-color);
+    border-radius: 4px;
+    background-color: transparent;
+    resize: none;
+    padding: 8px 16px;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-comments:focus {
+    border-color: var(--primary-brand-color);
+}
+.visually-hidden {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+.privacy-wrapper {
+    margin-bottom: 24px;
+}
+.privacy-input:checked+.privacy span {
+    background-color: var(--primary-brand-color);
+    fill: var(--light-color);
+    border: none;
+}
+ .privacy-label {
+     display: block;
+     font-size: 12px;
+     line-height: 1.17;
+     letter-spacing: 0.04em;
+     color: var(--light-slate);
+ }
+
+ .checkbox-span {
+     margin-right: 8px;
+     display: inline-flex;
+     width: 16px;
+     height: 16px;
+     align-items: center;
+     justify-content: center;
+     border-radius: 2px;
+     border: 1px solid var(--modal-overlay-color);
+     fill: transparent;
+     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+         border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+         fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ }
+ .link-privacy {
+     color: var(--primary-brand-color);
+ }
+
+ .privacy-input:checked+.privacy-label span {
+     background-color: var(--pressed-state-color);
+     fill: var(--light-color);
+     border: none;
+ }
+ .modal-button {
+     min-width: 169px;
+     display: block;
+     margin: auto;
+     padding: 16px 32px;
+     background-color: var(--primary-brand-color);
+     border-radius: 4px;
+     color: var(--white-background-color);
+     font-size: 16px;
+     font-weight: 500;
+     line-height: 1.5;
+     letter-spacing: 0.64px;
+     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+     transition-property: background-color;
+     transition-duration: 250ms;
+     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+     cursor: pointer;
+ }
+
+ .modal-button:hover,
+ .modal-button:focus {
+     background-color: var(--pressed-state-color);
+ }
+ .section-index {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     gap: 72px;
+ }
+ .li-index {
+     display: block;
+ }
+ .feature-icon {
+     display: none;
+ }
+ .index-heading-two {
+     color: var(--dark-color);
+     font-size: 36px;
+     font-weight: 700;
+     line-height: 1.11;
+     letter-spacing: 0.72px;
+     text-align: center;
+     margin-bottom: 8px;
+ }
+ .index-category {
+     font-size: 16px;
+     line-height: 1.5;
+     letter-spacing: 0.02em;
+     color: var(--text-color);
+ }
+ .third-section {
+     display: none;
+ }
+ .index-section-header {
+     color: var(--dark-color);
+     font-size: 36px;
+     font-weight: 700;
+     line-height: 1.11;
+     letter-spacing: 0.02em;
+     text-transform: capitalize;
+     text-align: center;
+     margin-bottom: 72px;
+ }
+ .team-section {
+     background-color: var(--light-color);
+ }
+ .team-list-studio {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 72px;
+ }
+ .li-index-thre {
+     background-color: var(--white-background-color);
+     width: 264px;
+     border-radius: 0px 0px 4px 4px;
+     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+         0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+         0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+ }
+ .team-description {
+     padding: 32px 0;
+     margin: 0 16px;
+     gap: 8px;
+ }
+ .foto-team {
+     text-align: center;
+     line-height: 1.2;
+     letter-spacing: 0.02em;
+     color: var(--dark-color);
+     font-size: 20px;
+     font-weight: 500;
+     margin-bottom: 8px;
+ }
   }
