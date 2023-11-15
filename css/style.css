@@ -440,7 +440,7 @@ button {
        position: fixed;
        inset: 0 0 auto;
        min-height: 100vh;
-       background-color: var(--dark-color);
+       background-color: rgba(46, 47, 66, 0.4);
        opacity: 1;
        pointer-events: all;
        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -525,17 +525,16 @@ button {
 .input-box {
     outline: transparent;
     border-radius: 4px;
-    border: 1px solid var(--modal-overlay-color);
+    border: 1px solid var(--MODAL-TXT);
     background-color: transparent;
     width: 100%;
     height: 40px;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     padding-left: 38px;
 }
-.input-box:focus {
-    border-color: var(--primary-brand-color);
-}
-.input-box:hover {
+.input-box:hover,
+.input-box:focus,
+.input-box:active {
     border-color: var(--primary-brand-color);
 }
 
@@ -551,12 +550,11 @@ button {
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-icon:focus {
+.input-box:hover+.modal-icon,
+.input-box:focus+.modal-icon,
+.input-box:active+.modal-icon {
     fill: var(--primary-brand-color);
 }
-.modal-icon:hover {
-    fill: var(--primary-brand-color);
-    }
 .comment-box {
     display: flex;
     flex-direction: column;
@@ -572,8 +570,8 @@ button {
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
-    color: var(--modal-overlay-color);
-    border: 1px solid var(--modal-overlay-color);
+    color: var(--MODAL-TXT);
+    border: 1px solid var(--MODAL-TXT);
     border-radius: 4px;
     background-color: transparent;
     resize: none;
@@ -582,7 +580,9 @@ button {
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-comments:focus {
+.modal-comments:hover,
+.modal-comments:focus,
+.modal-comments:active {
     border-color: var(--primary-brand-color);
 }
 .visually-hidden {
@@ -614,7 +614,7 @@ button {
      align-items: center;
      justify-content: center;
      border-radius: 2px;
-     border: 1px solid var(--modal-overlay-color);
+     border: 1px solid var(--MODAL-TXT);
      fill: transparent;
      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
          border 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -651,6 +651,10 @@ button {
  .modal-button:hover,
  .modal-button:focus {
      background-color: var(--pressed-state-color);
+ }
+ .svg-icon-checked {
+     width: 15px;
+     height: 15px;
  }
  .section-index {
      display: flex;
