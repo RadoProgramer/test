@@ -39,7 +39,7 @@ img {
 /*section About-mobile*/
 
 
-  .about{
+.about{
   color: var(--BLACK);
   font-family: Montserrat; sans-serif;
   font-size: 24px;
@@ -63,6 +63,10 @@ img {
   font-weight: 400;
   line-height: normal;
   padding: 47px 0 16px;
+  }
+  .image-about{
+    width: 288px;
+    height: 178;
   }
  
 
