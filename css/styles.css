@@ -39,6 +39,10 @@ img {
 /*---------------section About-mobile-----------------*/
 
 
+.container{
+  max-width: 288px;
+  height: 395px;
+}  
 .about{
   color: var(--BLACK);
   font-family: Montserrat; sans-serif;
@@ -48,14 +52,14 @@ img {
   line-height: normal;
   border-bottom: 1px solid var(--BLACK);
   text-align: left;
-  }
-  .about-span{
+}
+.about-span{
   background: var(--WHITE);
   padding-right: 14px;
   position: relative;
   top: 14px;  
-  }
-  .about-text{
+}
+.about-text{
   color: var(--BLACK);
   font-family: Montserrat; sans-serif;
   font-size: 16px;
@@ -63,11 +67,11 @@ img {
   font-weight: 400;
   line-height: normal;
   padding: 47px 0 16px;
-  }
-  .image-about{
+}
+.image-about{
     width: 288px;
     height: 178;
-  }
+}
  
 /*------------------------------------------------------*/
 
@@ -81,7 +85,9 @@ img {
 
   /*--------------section About-tablet-----------------*/
 .container{
-  padding: 0 24px;
+  max-width: 720px;
+  padding: 0;
+  height: 301px;
 }
 .about-ul{
   display: flex;
@@ -93,7 +99,6 @@ img {
   padding: 28px 0 0;
   line-height: 24.38px;
   max-width: 322px;
-  
 }
 .image-about{
   width: 344px;
