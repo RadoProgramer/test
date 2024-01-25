@@ -36,11 +36,9 @@ img {
 
 
 
-/*section About*/
+/*section About-mobile*/
 
-.about-section{
-  margin: 0 16px;
-  }
+
   .about{
   color: var(--BLACK);
   font-family: Montserrat; sans-serif;
@@ -66,4 +64,42 @@ img {
   line-height: normal;
   padding: 47px 0 16px;
   }
+ 
 
+
+  /* tablet styles */
+
+  @media screen and (min-width: 767px) {
+.container{
+  padding: 0 24px;
+}
+.about-ul{
+  display: flex;
+  flex-direction: row;
+  columns: 2;
+}
+.about-text{
+  font-size: 20px;
+  padding: 28px 0 0;
+  line-height: 24.38px;
+  max-width: 322px;
+  
+}
+.image-about{
+  width: 344px;
+  height: 217px;
+  margin-left: 54px;
+}
+.about{
+  margin-bottom: 54px;
+  font-size: 44px;
+}
+.about-span{
+  top: 28px;
+}
+.about-ul{
+  justify-content: center;
+}
+
+
+}
