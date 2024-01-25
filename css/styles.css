@@ -36,8 +36,8 @@ img {
 
 
 
-/*---------------section About-mobile-----------------*/
 
+/*---------------section About-mobile-----------------*/
 
 .container{
   max-width: 288px;
@@ -80,10 +80,9 @@ img {
 
 /* tablet styles */
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
 
-
-  /*--------------section About-tablet-----------------*/
+/*--------------section About-tablet-----------------*/
 .container{
   max-width: 720px;
   padding: 0;
