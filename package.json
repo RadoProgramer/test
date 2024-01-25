@@ -1,15 +1,15 @@
 {
-  "name": "parcel-project-template",
+  "name": "anemone_group8",
   "version": "1.1.0",
   "description": "",
-  "homepage": "https://github.com/sebastiankozic/anemone_group8",
+  "homepage": "https://sebastiankozic.github.io/anemone_group8",
   "scripts": {
     "dev": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url anemone_group8"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/migace/parcel-project-template-pl-main.git"
+    "url": "git+https://github.com/sebastiankozic/anemone_group8.git"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
