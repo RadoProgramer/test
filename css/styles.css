@@ -1,108 +1,102 @@
 :root {
-
-    --primary-brand-color: #4D5AE5;
-    --pressed-state-color: #404BBF;
-    --dark-color: #2E2F42;
-    --success-color: #31D0AA;
-    --text-color: #434455;
-    --subtle-text-color: #8E8F99;
-    --accent-color: #E7E9FC;
-    --light-color: #F4F4FD;
-    --modal-overlay-color: #2E2F42;
-    --hero-background-color: #2E2F42;
-    --white-background-color: #FFFFFF;
-    --modal-background-color: #FCFCFC;
-    --button-shadow: rgba(0, 0, 0, 0.15);
-    --portfolio-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
-        0px 1px 1px 0px rgba(46, 47, 66, 0.16),
-        0px 1px 6px 0px rgba(46, 47, 66, 0.08);
-    --standard-animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-    --MODAL-TXT: rgba(46, 47, 66, 0.40);
+  --PINK: #e86f54;
+  --DARK-PINK: #e25b41;
+  --WHITE: #ffffff;
+  --BLACK: #000000;
 }
-
-/*global*/
-* {
-    box-sizing: border-box;
-    margin: 0;
-}
-
 
 body {
-    font-family: "Roboto", sans-serif;
-    background-color: var(--white-background-color);
-    color: var(--dark-color);
-    margin: 0 auto;
+  background: var(--WHITE);
+  color: var(--BLACK);
+  font-family: "Montserrat", sans-serif;
 }
 
-ul,
-ol,
-a {
-    list-style-type: none;
-    text-decoration: none;
-    margin: 0;
-    padding-left: 0;
-    font-style: normal;
-}
-
-h1,
-h2,
-h3,
-p,
 ul {
-    margin: 0;
+  list-style: none;
+  padding-left: 0px;
 }
 
 img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+  display: block;
 }
 
-button {
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+.container {
+  max-width: 1158px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 
-.header {
-    border-bottom: 1px solid var(--accent-color);
-    box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08),
-        0px 1px 1px 0px rgba(46, 47, 66, 0.16),
-        0px 2px 1px 0px rgba(46, 47, 66, 0.08);
+/*section About*/
+
+.about-section{
+margin: 0 16px;
 }
-
-.logo {
-    color: var(--primary-brand-color);
-    font-family: "Raleway", sans-serif;
-    font-size: 18px;
-    font-weight: 800;
-    line-height: 1.17;
-    letter-spacing: 0.54px;
-    text-transform: uppercase;
-    margin-right: 76px;
+<<<<<<< Updated upstream
+.about{
+color: var(--BLACK);
+font-family: Montserrat; sans-serif;
+font-size: 24px;
+font-style: normal;
+font-weight: 700px;
+line-height: normal;
+border-bottom: 1px solid var(--BLACK);
+text-align: left;
 }
-
-.footer-logo {
-    color: var(--light-color);
+.about-span{
+background: var(--WHITE);
+padding-right: 14px;
+position: relative;
+top: 14px;  
 }
-
-.header-logo {
-    color: var(--dark-color);
+.about-text{
+color: var(--BLACK);
+font-family: Montserrat; sans-serif;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+padding: 47px 0 16px;
 }
+=======
 
 
+/*section About*/
+
+.about-section{
+  margin: 0 16px;
+  }
+  .about{
+  color: var(--BLACK);
+  font-family: Montserrat; sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700px;
+  line-height: normal;
+  border-bottom: 1px solid var(--BLACK);
+  text-align: left;
+  }
+  .about-span{
+  background: var(--WHITE);
+  padding-right: 14px;
+  position: relative;
+  top: 14px;  
+  }
+  .about-text{
+  color: var(--BLACK);
+  font-family: Montserrat; sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 47px 0 16px;
+  }
+>>>>>>> Stashed changes
