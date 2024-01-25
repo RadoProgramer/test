@@ -36,7 +36,7 @@ img {
 
 
 
-/*section About-mobile*/
+/*---------------section About-mobile-----------------*/
 
 
 .about{
@@ -69,11 +69,17 @@ img {
     height: 178;
   }
  
+/*------------------------------------------------------*/
+
+  
 
 
-  /* tablet styles */
+/* tablet styles */
 
-  @media screen and (min-width: 767px) {
+@media screen and (min-width: 767px) {
+
+
+  /*--------------section About-tablet-----------------*/
 .container{
   padding: 0 24px;
 }
@@ -104,6 +110,7 @@ img {
 .about-ul{
   justify-content: center;
 }
+/*------------------------------------------------------*/
 
 
 }
