@@ -28,24 +28,18 @@ img {
   padding: 0;
 }
 
-.container {
-  max-width: 1158px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-
-
-
 /*---------------section About-mobile-----------------*/
 
-.container{
-  max-width: 288px;
+
+.container-about {
+  margin: 0 auto;
+  max-width: 320px;
   height: 395px;
+  padding: 0 16px;
 }  
 .about{
   color: var(--BLACK);
-  font-family: Montserrat; sans-serif;
+  font-family: Montserrat;
   font-size: 24px;
   font-style: normal;
   font-weight: 700px;
@@ -61,7 +55,7 @@ img {
 }
 .about-text{
   color: var(--BLACK);
-  font-family: Montserrat; sans-serif;
+  font-family: Montserrat;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -72,21 +66,20 @@ img {
     width: 288px;
     height: 178;
 }
- 
+
 /*------------------------------------------------------*/
-
-  
-
 
 /* tablet styles */
 
 @media screen and (min-width: 768px) {
 
-/*--------------section About-tablet-----------------*/
-.container{
-  max-width: 720px;
-  padding: 0;
+
+  /*--------------section About-tablet-----------------*/
+.container-about {
+  margin: 0 auto;
+  max-width: 768px;
   height: 301px;
+  padding: 0 24px;
 }
 .about-ul{
   display: flex;
