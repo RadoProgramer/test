@@ -28,62 +28,49 @@ img {
   padding: 0;
 }
 
-/*---------------section About-mobile-----------------*/
-
-.container-about {
+.container {
+  max-width: 1158px;
   margin: 0 auto;
-  max-width: 320px;
-  height: 395px;
-  padding: 0 16px;
-}  
-.about{
+  padding: 0 15px;
+}
+
+
+
+/*section About-mobile*/
+
+
+  .about{
   color: var(--BLACK);
-  font-family: Montserrat;
+  font-family: Montserrat; sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 700px;
   line-height: normal;
   border-bottom: 1px solid var(--BLACK);
   text-align: left;
-}
-.about-span{
+  }
+  .about-span{
   background: var(--WHITE);
   padding-right: 14px;
   position: relative;
   top: 14px;  
-}
-.about-text{
+  }
+  .about-text{
   color: var(--BLACK);
-  font-family: Montserrat;
+  font-family: Montserrat; sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   padding: 47px 0 16px;
-}
-.image-about{
-    width: 288px;
-    height: 178;
-}
-
-@media (min-device-pixel-ratio: 2),
-  (-webkit-min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx){
-    
   }
-/*------------------------------------------------------*/
+ 
 
 
-/*--------------section About-tablet-----------------*/
-@media screen and (min-width: 768px) {
+  /* tablet styles */
 
-
-
-.container-about {
-  margin: 0 auto;
-  max-width: 768px;
-  height: 301px;
+  @media screen and (min-width: 767px) {
+.container{
   padding: 0 24px;
 }
 .about-ul{
@@ -96,6 +83,7 @@ img {
   padding: 28px 0 0;
   line-height: 24.38px;
   max-width: 322px;
+  
 }
 .image-about{
   width: 344px;
@@ -112,36 +100,6 @@ img {
 .about-ul{
   justify-content: center;
 }
+
+
 }
-/*------------------------------------------------------*/
-
-
-
-
-/*--------------section About-computer----------------*/
-@media screen and (min-width: 1280px){
-
-.container-about {
-  margin: 0 auto;
-  max-width: 1280px;
-  height: 424px;
-  padding: 0 24px;
-}
-.about{
-  margin-bottom: 53px;
-}
-.about-text{
-  font-size: 22px;
-  padding: 94px 0 0;
-  line-height: 26.82px;
-  max-width: 510px;
-}
-.image-about{
-  width: 632px;
-  height: 344px;
-  margin-left: 90px;
-}
-}
-/*------------------------------------------------------*/
-
-
