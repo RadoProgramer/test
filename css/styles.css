@@ -30,7 +30,6 @@ img {
 
 /*---------------section About-mobile-----------------*/
 
-
 .container-about {
   margin: 0 auto;
   max-width: 320px;
@@ -67,14 +66,20 @@ img {
     height: 178;
 }
 
+@media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx){
+    
+  }
 /*------------------------------------------------------*/
 
-/* tablet styles */
 
+/*--------------section About-tablet-----------------*/
 @media screen and (min-width: 768px) {
 
 
-  /*--------------section About-tablet-----------------*/
+
 .container-about {
   margin: 0 auto;
   max-width: 768px;
@@ -107,7 +112,36 @@ img {
 .about-ul{
   justify-content: center;
 }
+}
 /*------------------------------------------------------*/
 
 
+
+
+/*--------------section About-computer----------------*/
+@media screen and (min-width: 1280px){
+
+.container-about {
+  margin: 0 auto;
+  max-width: 1280px;
+  height: 424px;
+  padding: 0 24px;
 }
+.about{
+  margin-bottom: 53px;
+}
+.about-text{
+  font-size: 22px;
+  padding: 94px 0 0;
+  line-height: 26.82px;
+  max-width: 510px;
+}
+.image-about{
+  width: 632px;
+  height: 344px;
+  margin-left: 90px;
+}
+}
+/*------------------------------------------------------*/
+
+
