@@ -1,49 +1,92 @@
-INSTRUKCJA PRACY W ANEMONE GROUP 8
-## Zalezności
+# GoIT FSON17: JavaScript
 
-Na komputerze musi być zainstalowana LTS-wersja [Node.js](https://nodejs.org/en/).
+## Spis
 
-## Przed rozpoczęciem pracy
+- [Jak zainstalować repozytorium?](#jak-zainstalować-repozytorium)
+- [Jak uruchomić stronę?](#jak-uruchomić-stronę)
+- [Struktura plików](#struktura-plików)
+  - [Pliki HTML](#pliki-html)
+  - [Style CSS](#style-css)
+    - [SCSS? A nie CSS?](#scss-a-nie-css)
+  - [Skrypty JS](#skrypty-js)
+    - [Dlaczego skrypty mają końcówkę `.mjs`?](#dlaczego-skrypty-mają-końcówkę-mjs)
 
-Jeden raz na projekt zainstalować wszystkie zalezności.
+## Jak zainstalować repozytorium?
 
-```shell
-npm ci
+- Wymagany jest [NodeJS](https://nodejs.org/)
+- Jako narzędzie do kodowania polecam [Visual Studio Code](https://code.visualstudio.com/)
+  - Ważne! Jeśli potrzebujecie narzędzia w przeglądarce, użyjcie [VSCode.dev](https://vscode.dev/)
+- Wersja, której chcemy to 20 LTS - na dzień 26.01.2024 dokładna wersja to `20.11.0`
+- W katalogu głównym projektu (tam, gdzie ten plik) należy wpisać `npm install`, żeby zainstalować potrzebne pakiety
+
+## Jak uruchomić stronę?
+
+- W katalogu głównym projektu (tam, gdzie ten plik) należy wpisać `npm start`, żeby uruchomić skrypt i stronę poprzez Parcel
+
+## Struktura plików
+
+### Pliki HTML
+
+- `src/index.html` - główny plik, który będzie wyświetlał naszą stronę
+
+### Style CSS
+
+- `src/styles/index.scss` - główny plik stylów w formacie SCSS
+
+#### SCSS? A nie CSS?
+
+SCSS to inny format CSS, który musi być *skompilowany*, tj. zbudowany do zwykłego CSSa. Kluczowym jego elementem i powodem, dla którego jest tu użyty, jest możliwość pisania hierarchicznie. Oznacza to, że jeśli mamy element wewnątrz elementu, możemy opisać go tak:
+
+```scss
+.parent {
+  background: #fff;
+  
+  .main {
+    background: #eee;
+
+    .child {
+      background: #ddd;
+    }
+  }
+}
 ```
 
-### Praca
+zamiast tak:
 
-Włączyć tryp pracy.
+```css
+.parent {
+  background: #fff;
+}
 
-```shell
-npm run dev
+.parent .main {
+  background: #eee;
+}
+
+.parent .main .child {
+  background: #ddd;
+}
 ```
 
-W przeglądarce przejść na [http://localhost:1234](http://localhost:1234).
+Pozornie nie musi wyglądać to lepiej, ale bardzo szybko będziemy w stanie to zweryfikować podczas pracy. 😄
 
-### Deploy
+### Skrypty JS
 
-Kod będzie automatycznie się zbierać i robić deploy aktualnej wersji projektu na GitHub Pages, w
-gałąź `gh-pages`, za kazdym razem jeśli zostaną wprowadzone zmiany w `main`. Na przykład, po
-bezpośrenim push lub po przyjęciu pull-request. Aby to działało musimy w pliku `package.json`
-zmienić pole `homepage` i skrypt `build`, zmieniając `nazwe_uzytkownika` i `nazwe_repozytorium` na
-swoje.
+- `src/scripts` - katalog ze skryptami JS
+- `src/scripts/[nr zajęć].mjs` - skrypt, którego ID to numer zajęć
 
-```json
-"homepage": "https://nazwa_uzytkownika.github.io/nazwa_repozytorium",
-"scripts": {
-  "build": "parcel build src/*.html --public-url /nazwa_repozytorium/"
-},
+#### Dlaczego skrypty mają końcówkę `.mjs`?
+
+Pliki `.mjs` to inaczej pliki modułowe JS. Pliki te korzystają ze składni ESM (ang. ECMAScript Module), które m.in. korzystają ze słów kluczowych `import` i `export`. Jakkolwiek nazywanie pliku `.mjs` jest opcjonalnie i niewymagane, oznaczenie `.mjs` gwarantuje, że konkretny plik JS korzysta ze składni ESM - czyli ich składnia wygląda tak:
+
+```js
+import component from "library";
 ```
 
-Po jakimś czasie stronę mozna będzie zobaczyć na zywo pod adresem który jest wpisany w poprawione
-właściwości `homepage`, na przykład
-[https://goitacademy.github.io/parcel-project-template](https://goitacademy.github.io/parcel-project-template).
+a nie tak:
 
-## Pliki i folderzy
 
-- Wszystkie partials plików styłów powinny być w folderze `src/sass` i importować się w
-  `src/sass/main.scss`
-- Zdjęcia dodawajcie w folder `src/images`, przed tym zoptymizujcie te zdjęcia które dodajecie.
-  Program po prostu kopiuje wykorzystane zdjęcia aby system nie musiał optymizować je, bo na słabych
-  komputerach to moze zająć duzo czasu.
+```js
+const component = require("library");
+```
+
+co jest **kluczowe** w pisaniu JavaScript w sposób spójny i czytelny.
