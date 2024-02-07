@@ -78,17 +78,31 @@
 // console.log("Ala ma kota".replace("Ala", "Ewa"));
 // console.log("Ala ma kota. Ala jest szczęśliwa.".replaceAll("Ala", "Ewa"));
 
+// pierwsza liczba to index a druga liczba po wycieciu index wycinamy "ma"
 // console.log("Ala ma kota.".slice(4, 6));
 
 // console.log("Test danych wyświetlanych w konsoli przeglądarki metodą log");
 // console.info("Test danych wyświetlanych w konsoli przeglądarki metodą info");
 // console.warn("Test danych wyświetlanych w konsoli przeglądarki metodą warn");
-// console.error("Test danych wyświetlanych w konsoli przeglądarki metodą error");
+// console.error("Test danych wyświetlanych w konsoli przeglądarki      metodą error");
 
-// window.alert("Test wyskakującego powiadomienia!");
-// const response = window.confirm("Czy na pewno?");
-// const response = window.prompt("Wprowadź swoje imię");
+//window.alert("Test wyskakującego powiadomienia!");
 
-// console.log("Odpowiedź: " + response);
+//uzyskanie odpowiedzi najlepiej przypisac do zmiennej
+//const response = window.confirm("Czy na pewno?");
+
+// wartosci po przecinku traktuje oddzielnie
+//console.log("Odpowiedz:", response);
+
+//templejstring
+//console.log(`Odpowiedz: ${response}`);
+
+//Kontaminacja
+//console.log("Odpowiedz:" + response);
+
+// .prompt odpowiada za wprosadzanie danych
+//const response = window.prompt("Wprowadź swoje imię");
+
+//console.log("Odpowiedź: " + response);
 // console.log(`Odpowiedź: ${response}`);
 // console.log("Odpowiedź:", response, `(typ: ${typeof response})`);
