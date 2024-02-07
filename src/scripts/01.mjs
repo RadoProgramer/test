@@ -1,5 +1,4 @@
 "use strict";
-
 // let year = 2024;
 // console.log(`Rok przed zmianą: ${year}`);
 // year = 2020;
