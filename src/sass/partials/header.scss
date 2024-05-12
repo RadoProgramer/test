@@ -105,24 +105,25 @@ body {
   font-size: 16px;
 }
 
-.search-button {
+.SearchButton {
   border: none;
   background-color: transparent;
   color: var(--WHITE);
   cursor: pointer;
-  font-size: 16px;
-  outline: none;
 }
 .SearchIcon {
   margin-right: 5px;
   fill: var(--WHITE);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .SearchBorder {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: calc(100% - 7px);
+  width: calc(100% - 0px);
   height: 0.5px;
   background-color: var(--WHITE);
 }
