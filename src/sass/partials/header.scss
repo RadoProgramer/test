@@ -1,0 +1,108 @@
+:root {
+  --FONT-FAMILY: 'Roboto', sans-serif;
+  --RED: #ff001b;
+  --WHITE: #fff;
+}
+body {
+  font-family: var(--FONT-FAMILY);
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--WHITE);
+}
+
+.SectionHeader {
+  background: linear-gradient(#0000008f, #0000008f), url('../images/foto-header-desktop@1x.jpg');
+  background-repeat: no-repeat;
+  background-size: 400%;
+  background-position-x: 10%;
+  background-position-y: 34%;
+  height: 230px;
+}
+.Nav {
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.LogoHeader {
+  display: flex;
+}
+.LogoImage {
+  display: flex;
+  justify-content: center;
+}
+.LogoText {
+  display: none;
+}
+.UlNav {
+  display: flex;
+  gap: 40px;
+  list-style-type: none;
+  padding-inline-start: 0px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+.LiNav {
+  text-decoration: none;
+  line-height: 14.06px;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--WHITE);
+  position: relative;
+}
+.LiNav::after {
+  content: '';
+  background-color: var(--RED);
+
+  right: 0;
+  bottom: -4px;
+
+  height: 3px;
+  width: 0;
+
+  position: absolute;
+  transition: width 300ms, left 300ms;
+}
+.LiNav:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.Current::after {
+  content: '';
+  background-color: var(--RED);
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 3px;
+}
+@media screen and (min-width: 425px) {
+  .SectionHeader {
+    background-position: 0% 29%;
+    background-size: 142%;
+    height: 219px;
+  }
+  .Nav {
+    padding: 40px 32px;
+  }
+  .LogoHeader {
+    gap: 10px;
+  }
+  .LogoText {
+    font-weight: 500;
+    font-size: 30px;
+    color: var(--WHITE);
+    display: inline;
+    line-height: 35.16px;
+  }
+ 
+}
+@media screen and (min-width: 769px) {
+  .SectionHeader {
+    background-position: 0 35%;
+    background-size: cover;
+    height: 216px;
+  }
+  
+}
