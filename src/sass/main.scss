@@ -1,10 +1,10 @@
 /*
- * Główny plik dla stylów.
+ * Główny plik dla stylów STRONY GŁÓWNEJ.
  * Wszystkie partials podłączamy tutaj.
  */
 
 // Style dla pliku z przykładem HTML fragmentu
+@import './partials/example';
 @import './partials/header';
-
+@import './partials/main_style';
 @import './partials/footer';
-
