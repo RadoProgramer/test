@@ -14,15 +14,14 @@ body {
   font-size: 12px;
   color: var(--WHITE);
 }
-
 .SectionHeader {
   background: url('../images/mobile.jpg');
+  max-width: 100%;
+  background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-size: 400%;
-  background-position-x: 10%;
-  background-position-y: 34%;
+  margin: 0 auto;
   height: 230px;
-  opacity: 0.9;
 }
 
 .Nav {
@@ -128,9 +127,12 @@ body {
 @media screen and (min-width: 425px) {
   .SectionHeader {
     background: url('../images/tablet.jpg');
-    background-position: 0% 29%;
-    background-size: 142%;
-    height: 219px;
+    max-width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    height: 216px;
   }
   .Nav {
     padding: 40px 32px;
@@ -149,8 +151,11 @@ body {
 @media screen and (min-width: 769px) {
   .SectionHeader {
     background: url('../images/desktop.jpg');
-    background-position: 0 35%;
-    background-size: cover;
     height: 216px;
+    max-width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
   }
 }
