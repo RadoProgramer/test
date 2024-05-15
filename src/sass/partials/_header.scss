@@ -16,8 +16,8 @@ body {
 }
 
 .SectionHeader {
-  background-image: url('../images/mobile.jpg'); /* Domyślne tło dla wszystkich urządzeń */
-  background-repeat: no-repeat; /* Zapobiega powtarzaniu obrazu tła */
+  background-image: url('../images/mobile.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
   height: 230px;
 }
@@ -132,8 +132,6 @@ body {
 @media screen and (min-width: 425px) {
   .SectionHeader {
     background-image: url('../images/tablet.jpg');
-    
-
     height: 219px;
   }
   .Nav {
@@ -153,9 +151,6 @@ body {
 @media screen and (min-width: 769px) {
   .SectionHeader {
     background-image: url('../images/desktop.jpg');
-    
-
     height: 216px;
-    
   }
 }
