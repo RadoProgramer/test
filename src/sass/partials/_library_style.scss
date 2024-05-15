@@ -13,12 +13,10 @@ body {
 
 .MainHeader {
   background: linear-gradient(#0000008f, #0000008f), url('../images/header_background.jpg');
-  background-position: 10% 34%;
-    background-repeat: no-repeat;
-    background-size: 400%;
-    background-attachment: scroll, scroll;
-    background-origin: padding-box, padding-box;
-    background-clip: border-box, border-box;
+  background-repeat: no-repeat;
+  background-size: 400%;
+  background-position-x: 10%;
+  background-position-y: 34%;
   height: 230px;
 }
 
@@ -146,12 +144,8 @@ body {
 
 @media screen and (min-width: 425px) {
   .MainHeader {
-    background-position: 10% 34%;
-    background-repeat: no-repeat;
-    background-size: 400%;
-    background-attachment: scroll, scroll;
-    background-origin: padding-box, padding-box;
-    background-clip: border-box, border-box;
+    background-position: 0% 29%;
+    background-size: 142%;
     height: 219px;
   }
   .Navigation {
@@ -190,12 +184,9 @@ body {
 }
 @media screen and (min-width: 769px) {
   .MainHeader {
-    background-position: 10% 34%;
-    background-repeat: no-repeat;
-    background-size: 400%;
-    background-attachment: scroll, scroll;
-    background-origin: padding-box, padding-box;
-    background-clip: border-box, border-box;
+    background-position: 0 35%;
+    background-size: cover;
+    height: 216px;
   }
   .ButtonsWrapper {
     gap: 16px;
