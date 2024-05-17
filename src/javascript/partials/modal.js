@@ -37,7 +37,9 @@ function createModalTemplate() {
   const addToWatchedBtn = modalContainer.querySelector('#addToWatchedBtn');
   const addToQueueBtn = modalContainer.querySelector('#addToQueueBtn');
 
-  addToWatchedBtn.addEventListener('click', () => addToLocalStorage('watchedMovies', selectedMovie));
+  addToWatchedBtn.addEventListener('click', () =>
+    addToLocalStorage('watchedMovies', selectedMovie),
+  );
   addToQueueBtn.addEventListener('click', () => addToLocalStorage('queueMovies', selectedMovie));
 }
 
