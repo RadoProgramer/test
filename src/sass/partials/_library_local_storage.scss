@@ -72,11 +72,18 @@
   .queue-section {
     padding-top: 20px;
     padding-bottom: 40px;
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1071px) {
+      margin-top: 216px;
+      padding-top: 60px;
+    }
+  
+    @media screen and (min-width: 591px) {
+      margin-top: 0;
       padding-top: 60px;
       padding-bottom: 60px;
     }
   }
+  
   .card .details {
     display: flex;
   }

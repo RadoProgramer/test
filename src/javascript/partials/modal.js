@@ -40,14 +40,24 @@ function createModalTemplate() {
   addToWatchedBtn.addEventListener('click', () =>
     addToLocalStorage('watchedMovies', selectedMovie),
   );
-  addToQueueBtn.addEventListener('click', () => addToLocalStorage('queueMovies', selectedMovie));
+  addToQueueBtn.addEventListener('click', () =>
+    addToLocalStorage('queueMovies', selectedMovie),
+  );
 }
 
 function addToLocalStorage(key, movie) {
   let movies = JSON.parse(localStorage.getItem(key)) || [];
-  movies.push(movie);
-  localStorage.setItem(key, JSON.stringify(movies));
+
+  // Sprawdzenie, czy film już istnieje w odpowiedniej sekcji
+  const movieExists = movies.some(existingMovie => existingMovie.title === movie.title);
+  if (!movieExists) {
+    movies.push(movie);
+    localStorage.setItem(key, JSON.stringify(movies));
+  } else {
+    console.log(`${movie.title} is already in ${key}`);
+  }
 }
+
 function openModal(selectedMovie) {
   const modalContainer = document.querySelector('.modal');
   const movieDetails = document.getElementById('movieDetails');
