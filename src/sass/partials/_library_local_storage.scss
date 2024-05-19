@@ -5,6 +5,11 @@
     --WHITE: #fff;
     --BLACK: #000;
   }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
   body {
     font-family: var(--FONT-FAMILY);
     font-weight: 500;
