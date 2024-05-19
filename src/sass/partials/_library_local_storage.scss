@@ -90,7 +90,8 @@
   }
   
   .card .details {
-    display: flex;
+    display: ruby-text;
+    text-align: left;
   }
   .card .details p {
     margin: 0;
