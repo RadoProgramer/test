@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const img = document.createElement('img');
       img.src = movie.image;
-      img.alt = movie.title; 
 
       const details = document.createElement('div');
       details.classList.add('details');
