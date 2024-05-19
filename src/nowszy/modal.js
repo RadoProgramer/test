@@ -1,3 +1,5 @@
+import { addToWatched, addToQueue } from './buttons.js';
+
 function createModalTemplate() {
   const existingModal = document.querySelector('.modal');
   if (existingModal) {
@@ -30,6 +32,7 @@ function createModalTemplate() {
     }
   });
 }
+
 function openModal(selectedMovie) {
   const modalContainer = document.querySelector('.modal');
   const movieDetails = document.getElementById('movieDetails');
@@ -49,7 +52,7 @@ function openModal(selectedMovie) {
   title.classList.add('modal-movie-title');
 
   const additionalInfo = document.createElement('div');
-  additionalInfo.classList.add('modal-additional-Info');
+  additionalInfo.classList.add('modal-additional-info');
 
   const voteAverageSpan = document.createElement('span');
   voteAverageSpan.textContent = selectedMovie.voteAverage.toFixed(1);
@@ -59,7 +62,6 @@ function openModal(selectedMovie) {
   voteCountSpan.textContent = selectedMovie.voteCount;
   voteCountSpan.classList.add('modal-vote-count');
 
-  // const genre = selectedMovie.genre.length > 0 ? selectedMovie.genre[0] : '';
   const popularity = selectedMovie.popularity.toFixed(0);
 
   const dataPairs = [
@@ -75,18 +77,21 @@ function openModal(selectedMovie) {
     paragraph.innerHTML = `<div class="modal-data-name-wrapper">${pair.label}</div><div class="modal-data-wrapper">${pair.value}</div>`;
     additionalInfo.appendChild(paragraph);
   });
+
   const buttonContainer = document.createElement('div');
   buttonContainer.classList.add('modal-buttons');
 
   const watchedButton = document.createElement('button');
   watchedButton.classList.add('watched');
-  watchedButton.id = 'addtToWatchedBtn';
+  watchedButton.id = 'addToWatchedBtn';
   watchedButton.textContent = 'Add to Watched';
+  watchedButton.addEventListener('click', () => addToWatched(selectedMovie));
 
   const queueButton = document.createElement('button');
   queueButton.classList.add('queue');
   queueButton.id = 'addToQueueBtn';
-  queueButton.textContent = 'Add to queue';
+  queueButton.textContent = 'Add to Queue';
+  queueButton.addEventListener('click', () => addToQueue(selectedMovie));
 
   buttonContainer.appendChild(watchedButton);
   buttonContainer.appendChild(queueButton);
@@ -101,7 +106,7 @@ function openModal(selectedMovie) {
     aboutSection.classList.add('modal-overview');
 
     const aboutSectionTextHead = document.createElement('p');
-    aboutSectionTextHead.classList.add('modal-overview-text-Head');
+    aboutSectionTextHead.classList.add('modal-overview-text-head');
     aboutSectionTextHead.innerHTML = `About`;
 
     const aboutSectionText = document.createElement('p');
@@ -115,7 +120,6 @@ function openModal(selectedMovie) {
   }
 
   modalContainer.style.display = 'block';
-
   modalContainer.classList.add('show');
   document.body.classList.add('modal-open');
 }
