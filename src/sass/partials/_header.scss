@@ -17,7 +17,7 @@ body {
 
 .SectionHeader {
   background-image: url('../images/mobile.jpg');
-  background-repeat: no-repeat;
+  background-repeat: round;
   background-size: cover;
   height: 230px;
   position: fixed;
@@ -27,6 +27,11 @@ body {
   background-color: white;
   z-index: 1000;
 }
+@media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+  .SectionHeader {
+    background-image: url('../images/mobile@2x.jpg');
+  }
+}
 
 .Nav {
   padding: 40px 20px;
@@ -34,8 +39,9 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.LogoHeader {
+.LogoWrapper {
   display: flex;
+  cursor: pointer;
 }
 .LogoImage {
   display: flex;
@@ -136,6 +142,11 @@ body {
   color: transparent;
 }
 @media screen and (min-width: 591px) {
+  @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+    .SectionHeader {
+      background-image: url('../images/tablet@2x.jpg');
+    }
+  }
   .SectionHeader {
     background-image: url('../images/tablet.jpg');
     height: 219px;
@@ -143,7 +154,7 @@ body {
   .Nav {
     padding: 40px 32px;
   }
-  .LogoHeader {
+  .LogoWrapper {
     gap: 10px;
   }
   .LogoText {
