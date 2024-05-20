@@ -47,17 +47,9 @@ function changeValue(array) {
   return response;
 }
 
-function addToQueue(movie) {
-  const queue = JSON.parse(localStorage.getItem('queue')) || [];
-  // Check if the movie already exists in the queue to avoid duplicates
-  if (!queue.some(m => m.key === movie.key)) {
-    queue.push(movie);
-    localStorage.setItem('queue', JSON.stringify(queue));
-  }
-}
-
 async function fetchMove(number = 1) {
   globalNumber = number;
+  console.log(globalNumber);
   try {
     array = [];
     let response = await axios.get(`${url}&page=${number}`);
@@ -89,7 +81,7 @@ async function fetchMove(number = 1) {
 
       img.src = Object.values(element)[1][0];
       title.textContent = element.key;
-      genre.textContent = Object.values(element)[1][2].join(', ');
+      genre.textContent = Object.values(element)[1][2];
       year.textContent = Object.values(element)[1][1];
 
       card.appendChild(img);
@@ -98,16 +90,7 @@ async function fetchMove(number = 1) {
       details.appendChild(year);
       card.appendChild(details);
 
-      const addToQueueButton = document.createElement('button');
-      addToQueueButton.textContent = 'ADD TO QUEUE';
-      addToQueueButton.addEventListener('click', () => {
-        addToQueue(element);
-        alert(`${element.key} has been added to your queue.`);
-      });
-      card.appendChild(addToQueueButton);
-
       container.appendChild(card);
-
       card.addEventListener('click', () => {
         const selectedMovie = {
           title: element.key,
@@ -136,6 +119,7 @@ buttons.addEventListener('click', event => {
   const number = parseInt(target);
   const firstChild = buttons.firstElementChild;
   const lastChild = buttons.lastElementChild;
+  console.log(values[0]);
   container.innerHTML = '';
 
   if (event.target === firstChild) {
@@ -149,5 +133,45 @@ buttons.addEventListener('click', event => {
   } else {
     localStorage.setItem('globalNumber', number);
     fetchMove(number);
+  }
+
+  if (event.target === values[0] || event.target === values[2]) {
+    if (event.target.textContent !== '2') {
+      values.forEach(element => {
+        if (element === values[0] || element === values[6]) {
+        } else {
+          element.textContent = parseInt(element.textContent);
+        }
+      });
+    }
+  } else if (event.target === values[1]) {
+    if (event.target.textContent !== '1' || event.target.textContent !== '2') {
+      values.forEach(element => {
+        if (element === values[0] || element === values[6]) {
+        } else {
+          element.textContent = parseInt(element.textContent) - 2;
+        }
+      });
+    }
+  } else if (event.target === values[4] || event.target === values[6]) {
+    if (event.target.textContent !== '19') {
+      values.forEach(element => {
+        if (element === values[0] || element === values[6]) {
+        } else {
+          element.textContent = parseInt(element.textContent) + 1;
+        }
+      });
+    }
+  } else {
+    if (event.target.textContent !== '4') {
+      if (event.target.textContent !== '20') {
+        values.forEach(element => {
+          if (element === values[0] || element === values[6]) {
+          } else {
+            element.textContent = parseInt(element.textContent) + 2;
+          }
+        });
+      }
+    }
   }
 });
