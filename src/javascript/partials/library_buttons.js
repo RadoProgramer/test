@@ -1,21 +1,65 @@
-const watchedButton = document.querySelector('[data-watched]');
-const queueButton = document.querySelector('[data-queue]');
+// combined_buttons.js
 
-watchedButton.addEventListener('click', e => {
-  if (!watchedButton.classList.contains('SelectedButton')) {
-    console.log(e.target);
-    e.target.classList.add('SelectedButton');
-    queueButton.classList.remove('SelectedButton');
+document.addEventListener('DOMContentLoaded', () => {
+  const watchedButton = document.querySelector('button[data-watched]');
+  const queueButton = document.querySelector('button[data-queue]');
+  const watchedMoviesContainer = document.getElementById('watched-movies-container');
+  const queueContainer = document.getElementById('queue-container');
+
+  function renderMovies(movies, container) {
+    container.innerHTML = '';
+    movies.forEach(movie => {
+      const card = document.createElement('div');
+      card.classList.add('card');
+      const img = document.createElement('img');
+      const title = document.createElement('h1');
+      const genre = document.createElement('p');
+      const year = document.createElement('p');
+
+      img.src = movie.image;
+      title.textContent = movie.title;
+      genre.textContent = movie.genre;
+      year.textContent = movie.year;
+
+      card.appendChild(img);
+      card.appendChild(title);
+      card.appendChild(genre);
+      card.appendChild(year);
+      container.appendChild(card);
+    });
   }
-});
-queueButton.addEventListener('click', e => {
-  if (!queueButton.classList.contains('SelectedButton')) {
-    console.log(e.target);
-    e.target.classList.add('SelectedButton');
-    watchedButton.classList.remove('SelectedButton');
+
+  function displayMovies(key, container) {
+    const movies = JSON.parse(localStorage.getItem(key)) || [];
+    renderMovies(movies, container);
   }
-});
-const backToHomeButton = document.querySelector('.LogoWraper');
-backToHomeButton.addEventListener('click', () => {
-  window.location.href = 'index.html';
+
+  watchedButton.addEventListener('click', e => {
+    if (!watchedButton.classList.contains('SelectedButton')) {
+      watchedMoviesContainer.style.display = 'block';
+      queueContainer.style.display = 'none';
+      e.target.classList.add('SelectedButton');
+      queueButton.classList.remove('SelectedButton');
+      displayMovies('watchedMovies', watchedMoviesContainer);
+      queueContainer.innerHTML = '';
+    }
+  });
+
+  queueButton.addEventListener('click', e => {
+    if (!queueButton.classList.contains('SelectedButton')) {
+      watchedMoviesContainer.style.display = 'none';
+      queueContainer.style.display = 'block';
+      e.target.classList.add('SelectedButton');
+      watchedButton.classList.remove('SelectedButton');
+      displayMovies('queueMovies', queueContainer);
+      watchedMoviesContainer.innerHTML = '';
+    }
+  });
+
+  const backToHomeButton = document.querySelector('.LogoWraper');
+  backToHomeButton.addEventListener('click', () => {
+    window.location.href = 'index.html';
+  });
+
+  displayMovies('watchedMovies', watchedMoviesContainer);
 });
