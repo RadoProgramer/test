@@ -30,6 +30,7 @@ function createModalTemplate() {
     }
   });
 }
+
 function openModal(selectedMovie) {
   const modalContainer = document.querySelector('.modal');
   const movieDetails = document.getElementById('movieDetails');
@@ -59,7 +60,6 @@ function openModal(selectedMovie) {
   voteCountSpan.textContent = selectedMovie.voteCount;
   voteCountSpan.classList.add('modal-vote-count');
 
-  // const genre = selectedMovie.genre.length > 0 ? selectedMovie.genre[0] : '';
   const popularity = selectedMovie.popularity.toFixed(0);
 
   const dataPairs = [
@@ -75,12 +75,13 @@ function openModal(selectedMovie) {
     paragraph.innerHTML = `<div class="modal-data-name-wrapper">${pair.label}</div><div class="modal-data-wrapper">${pair.value}</div>`;
     additionalInfo.appendChild(paragraph);
   });
+
   const buttonContainer = document.createElement('div');
   buttonContainer.classList.add('modal-buttons');
 
   const watchedButton = document.createElement('button');
   watchedButton.classList.add('watched');
-  watchedButton.id = 'addtToWatchedBtn';
+  watchedButton.id = 'addToWatchedBtn';
   watchedButton.textContent = 'Add to Watched';
 
   const queueButton = document.createElement('button');
@@ -114,10 +115,34 @@ function openModal(selectedMovie) {
     detailsContainer.appendChild(buttonContainer);
   }
 
-  modalContainer.style.display = 'block';
+  watchedButton.addEventListener('click', () => addToWatched(selectedMovie));
+  queueButton.addEventListener('click', () => addToQueue(selectedMovie));
 
+  modalContainer.style.display = 'block';
   modalContainer.classList.add('show');
   document.body.classList.add('modal-open');
+}
+
+function addToWatched(movie) {
+  let watchedMovies = JSON.parse(localStorage.getItem('watchedMovies')) || [];
+  if (!watchedMovies.some(m => m.title === movie.title)) {
+    watchedMovies.push(movie);
+    localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
+    alert(`${movie.title} has been added to your watched list.`);
+  } else {
+    alert(`${movie.title} is already in your watched list.`);
+  }
+}
+
+function addToQueue(movie) {
+  let queueMovies = JSON.parse(localStorage.getItem('queueMovies')) || [];
+  if (!queueMovies.some(m => m.title === movie.title)) {
+    queueMovies.push(movie);
+    localStorage.setItem('queueMovies', JSON.stringify(queueMovies));
+    alert(`${movie.title} has been added to your queue.`);
+  } else {
+    alert(`${movie.title} is already in your queue.`);
+  }
 }
 
 function closeModal() {
