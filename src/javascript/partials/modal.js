@@ -30,6 +30,7 @@ function createModalTemplate() {
     }
   });
 }
+
 function openModal(selectedMovie) {
   const modalContainer = document.querySelector('.modal');
   const movieDetails = document.getElementById('movieDetails');
@@ -59,7 +60,6 @@ function openModal(selectedMovie) {
   voteCountSpan.textContent = selectedMovie.voteCount;
   voteCountSpan.classList.add('modal-vote-count');
 
-  // const genre = selectedMovie.genre.length > 0 ? selectedMovie.genre[0] : '';
   const popularity = selectedMovie.popularity.toFixed(0);
 
   const dataPairs = [
@@ -75,6 +75,7 @@ function openModal(selectedMovie) {
     paragraph.innerHTML = `<div class="modal-data-name-wrapper">${pair.label}</div><div class="modal-data-wrapper">${pair.value}</div>`;
     additionalInfo.appendChild(paragraph);
   });
+
   const buttonContainer = document.createElement('div');
   buttonContainer.classList.add('modal-buttons');
 
@@ -86,7 +87,12 @@ function openModal(selectedMovie) {
   const queueButton = document.createElement('button');
   queueButton.classList.add('queue');
   queueButton.id = 'addToQueueBtn';
-  queueButton.textContent = 'Add to queue';
+  queueButton.textContent = 'Add to Queue';
+  
+  queueButton.addEventListener('click', () => {
+    addToQueue(selectedMovie);
+    alert(`${selectedMovie.title} has been added to your queue.`);
+  });
 
   buttonContainer.appendChild(watchedButton);
   buttonContainer.appendChild(queueButton);
@@ -115,7 +121,6 @@ function openModal(selectedMovie) {
   }
 
   modalContainer.style.display = 'block';
-
   modalContainer.classList.add('show');
   document.body.classList.add('modal-open');
 }
@@ -124,6 +129,14 @@ function closeModal() {
   const modalContainer = document.querySelector('.modal');
   modalContainer.style.display = 'none';
   document.body.classList.remove('modal-open');
+}
+
+function addToQueue(movie) {
+  const queue = JSON.parse(localStorage.getItem('queue')) || [];
+  if (!queue.some(m => m.key === movie.key)) {
+    queue.push(movie);
+    localStorage.setItem('queue', JSON.stringify(queue));
+  }
 }
 
 export { createModalTemplate, openModal, closeModal };
