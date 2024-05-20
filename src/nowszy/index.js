@@ -1,2 +1,5 @@
 import './main.scss';
-import './main.js';
+import './home';
+import './modal';
+import './buttons';
+
