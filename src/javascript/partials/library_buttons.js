@@ -1,10 +1,10 @@
-// combined_buttons.js
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const watchedButton = document.querySelector('button[data-watched]');
   const queueButton = document.querySelector('button[data-queue]');
-  const watchedMoviesContainer = document.getElementById('watched-movies-container');
-  const queueContainer = document.getElementById('queue-container');
+  const watchedMoviesSection = document.querySelector('.watched-movies-section');
+  const queueSection = document.querySelector('.queue-section');
 
   function renderMovies(movies, container) {
     container.innerHTML = '';
@@ -34,26 +34,30 @@ document.addEventListener('DOMContentLoaded', () => {
     renderMovies(movies, container);
   }
 
-  watchedButton.addEventListener('click', e => {
-    if (!watchedButton.classList.contains('SelectedButton')) {
-      watchedMoviesContainer.style.display = 'block';
-      queueContainer.style.display = 'none';
-      e.target.classList.add('SelectedButton');
+  function updateActiveSection(section) {
+    if (section === 'watched') {
+      watchedMoviesSection.classList.add('active');
+      queueSection.classList.remove('active');
+      watchedButton.classList.add('SelectedButton');
       queueButton.classList.remove('SelectedButton');
-      displayMovies('watchedMovies', watchedMoviesContainer);
-      queueContainer.innerHTML = '';
+      displayMovies('watchedMovies', watchedMoviesSection.querySelector('#watched-movies-container'));
+    } else if (section === 'queue') {
+      watchedMoviesSection.classList.remove('active');
+      queueSection.classList.add('active');
+      watchedButton.classList.remove('SelectedButton');
+      queueButton.classList.add('SelectedButton');
+      displayMovies('queueMovies', queueSection.querySelector('#queue-container'));
     }
+  }
+
+  watchedButton.addEventListener('click', () => {
+    updateActiveSection('watched');
+    localStorage.setItem('activeSection', 'watched');
   });
 
-  queueButton.addEventListener('click', e => {
-    if (!queueButton.classList.contains('SelectedButton')) {
-      watchedMoviesContainer.style.display = 'none';
-      queueContainer.style.display = 'block';
-      e.target.classList.add('SelectedButton');
-      watchedButton.classList.remove('SelectedButton');
-      displayMovies('queueMovies', queueContainer);
-      watchedMoviesContainer.innerHTML = '';
-    }
+  queueButton.addEventListener('click', () => {
+    updateActiveSection('queue');
+    localStorage.setItem('activeSection', 'queue');
   });
 
   const backToHomeButton = document.querySelector('.LogoWraper');
@@ -61,5 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = 'index.html';
   });
 
-  displayMovies('watchedMovies', watchedMoviesContainer);
+  // Check localStorage for the active section and update accordingly
+  const activeSection = localStorage.getItem('activeSection') || 'watched';
+  updateActiveSection(activeSection);
 });
+

@@ -21,11 +21,11 @@
   
     @media screen and (min-width: 768px) {
       gap: 32px;
-      margin-top: 33px;
+      margin-top: 59px;
     }
     @media screen and (min-width: 1280px) {
       gap: 15px;
-      margin-top: 30px;
+      margin-top: 60px;
     }
   }
   .queue-section {
@@ -169,3 +169,19 @@
     background-color: #e25f08;
   }
   
+
+
+  /* Ensure both sections are hidden initially */
+.watched-movies-section,
+.queue-section {
+  display: none;
+}
+
+/* Display the watched-movies-section by default */
+.watched-movies-section.active {
+  display: block;
+}
+
+.queue-section.active {
+  display: block;
+}

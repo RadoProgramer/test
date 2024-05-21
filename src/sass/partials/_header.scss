@@ -143,38 +143,58 @@ body {
 }
 @media screen and (min-width: 591px) {
   .SectionHeader {
-  background-image: url('../images/tablet.jpg');
-  height: 219px;
-}
-@media screen and (min-width: 591px) {
+    background-image: url('../images/tablet.jpg');
+    height: 219px;
+  }
   @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
     .SectionHeader {
       background-image: url('../images/tablet@2x.jpg');
     }
-    
   }
 }
 
- 
-  
-  
-  .Nav {
-    padding: 40px 32px;
+@media screen and (min-width: 591px) {
+  .SectionHeader {
+    background-image: url('../images/tablet.jpg');
+    height: 219px;
   }
-  .LogoWrapper {
-    gap: 10px;
-  }
-  .LogoText {
-    font-weight: 500;
-    font-size: 30px;
-    color: var(--WHITE);
-    display: inline;
-    line-height: 35.16px;
+  
+  @media 
+    only screen and (-webkit-min-device-pixel-ratio: 2), 
+    only screen and (min--moz-device-pixel-ratio: 2), 
+    only screen and (-o-min-device-pixel-ratio: 2/1), 
+    only screen and (min-device-pixel-ratio: 2), 
+    only screen and (min-resolution: 192dpi), 
+    only screen and (min-resolution: 2dppx) {
+    .SectionHeader {
+      background-image: url('../images/tablet@2x.jpg');
+    }
   }
 }
+
+.Nav {
+  padding: 40px 32px;
+}
+.LogoWrapper {
+  gap: 10px;
+}
+.LogoText {
+  font-weight: 500;
+  font-size: 30px;
+  color: var(--WHITE);
+  display: inline;
+  line-height: 35.16px;
+}
 @media screen and (min-width: 1280px) {
-  .SectionHeader {
+ .SectionHeader {
     background-image: url('../images/desktop.jpg');
     height: 216px;
   }
+  @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+    .SectionHeader {
+      background-image: url('../images/desktop@2x.jpg');
+    }
+  }
 }
+
+
